@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    {% if validURL %}
+        <!-- Video Details -->
+        <p>Video Details</p>
+        <table class="table table-hover table-dark">
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td>{{ data.title }}</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>{{ data.id }}</td>
+                </tr>
+                <tr>
+                    <td>Author</td>
+                    <td>{{ data.author }}</td>
+                </tr>
+                <tr>
+                    <td>Duration</td>
+                    <td>{{ data.duration }}</td>
+                </tr>
+                <tr>
+                    <td>Views</td>
+                    <td>{{ data.views }}</td>
+                </tr>
+                <tr>
+                    <td>Audio Bit Rate</td>
+                    <td>{{ data.bitRate }}</td>
+                </tr>
+                <tr>
+                    <td>Audio Link</td>
+                    <td><a href = "{{ data.audioLink }}">Click Here</a></td>
+                </tr>
+                <tr>
+                    <td>Video Resolution</td>
+                    <td>{{ data.resolution }}</td>
+                </tr>
+                <tr>
+                    <td>Video Link</td>
+                    <td><a href = "{{ data.videoLink }}">Click Here</a></td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            This is not a YouTube video URL!
+        </div>
+    {% endif %}
+        
+    <a href=home><button class="btn btn-primary mb-2">Submit another one</button></a>
+{% endblock content %}
